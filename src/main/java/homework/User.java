@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class User {
+
     public String login;
     public String email;
 
@@ -41,7 +42,7 @@ public class User {
     }
 
     public String generateUser() {
-        return generateUser(null , null);
+        return generateUser(null, null);
     }
 
     public String generateUser(String login, String email) {
