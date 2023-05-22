@@ -12,10 +12,10 @@ public class User {
     public String email;
 
     public User(String login, String email) {
-        if (login == null|| login.isBlank() || login.isEmpty()) {
-            throw new IllegalArgumentException("Поле логин не может быть пустым");
+        if (login != null|| !login.isBlank() || !login.isEmpty()) {
+            this.login = login;
         } else {
-        this.login = login;
+            throw new IllegalArgumentException("Поле логин не может быть пустым");
         }
         if (email == null || email.isEmpty() || email.isBlank()) {
                 throw new IllegalArgumentException("Поле eMail не может быть пустым");
@@ -46,6 +46,8 @@ public class User {
     }
 
     public String generateUser(String login, String email) {
+        this.login = login;
+        this.email = email;
         if (login == null|| login.isBlank() || login.isEmpty()) {
             return "Пожалуйста введите логин";
         }{
